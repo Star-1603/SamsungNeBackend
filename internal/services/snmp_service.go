@@ -9,39 +9,45 @@ import (
 	"fmt"
 )
 
-func FetchSnmpData(ipAddress string, community string, version gosnmp.SnmpVersion, encryptionType string, securityLevel string, oid string) (string, error) {
+func FetchSnmpData(ipAddress string, community string, version gosnmp.SnmpVersion, encryptionType string, securityLevel string, logOid string) ([]string, error) {
 	snmp := &gosnmp.GoSNMP{
-		Target:    ipAddress,           // IP Address of the target device
-		Port:      161,                  // Default SNMP port
-		Version:   version,              // SNMP version (e.g., SNMPv2c, SNMPv3)
-		Community: community,            // Community string for SNMPv2c
+		Target:    ipAddress,
+		Port:      161,
+		Version:   version,
+		Community: community,
 		Timeout:   time.Duration(2) * time.Second,
 	}
 
 	err := snmp.Connect()
 	if err != nil {
 		log.Printf("Error connecting to SNMP target: %v", err)
-		return "", err
+		return nil, err
 	}
 	defer snmp.Conn.Close()
 
-	result, err := snmp.Get([]string{oid})
+	// Perform a GETBULK operation to fetch multiple log entries
+	result, err := snmp.BulkWalkAll(logOid)
 	if err != nil {
-		log.Printf("Error fetching SNMP data: %v", err)
-		return "", err
+		log.Printf("Error fetching SNMP logs: %v", err)
+		return nil, err
 	}
 
-	if len(result.Variables) > 0 {
-		return fmt.Sprintf("SNMP Data: %v", result.Variables[0].Value), nil
+	var logs []string
+	for _, variable := range result {
+		if variable.Type == gosnmp.OctetString {
+			logs = append(logs, string(variable.Value.([]byte)))
+		}
 	}
 
-	return "", fmt.Errorf("No SNMP data found")
+	if len(logs) == 0 {
+		return nil, fmt.Errorf("No log data found for OID: %s", logOid)
+	}
+
+	return logs, nil
 }
 
 func GetNetworkInfo() ([]models.NetworkInfo, error) {
 	var networkInfos []models.NetworkInfo
-
-	// Get a list of all network interfaces
 	interfaces, err := net.Interfaces()
 	if err != nil {
 		return nil, err
@@ -55,7 +61,6 @@ func GetNetworkInfo() ([]models.NetworkInfo, error) {
 		}
 
 		for _, addr := range addrs {
-			// Check if the address is an IPv4 address
 			ipNet, ok := addr.(*net.IPNet)
 			if ok && ipNet.IP.To4() != nil {
 				networkInfos = append(networkInfos, models.NetworkInfo{

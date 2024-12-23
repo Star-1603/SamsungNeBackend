@@ -10,11 +10,11 @@ import (
 )
 
 func SnmpHandler(w http.ResponseWriter, r *http.Request) {
-	ipAddress := r.URL.Query().Get("ip")                // Example: ?ip=192.168.1.1
-	community := r.URL.Query().Get("community")         // Example: ?community=public
-	versionStr := r.URL.Query().Get("version")          // Example: ?version=2
-	encryptionType := r.URL.Query().Get("encryption")   // Example: ?encryption=none
-	securityLevel := r.URL.Query().Get("securityLevel") // Example: ?securityLevel=noAuthNoPriv
+	ipAddress := r.URL.Query().Get("ip")
+	community := r.URL.Query().Get("community")
+	versionStr := r.URL.Query().Get("version")
+	encryptionType := r.URL.Query().Get("encryption")
+	securityLevel := r.URL.Query().Get("securityLevel")
 
 	if ipAddress == "" {
 		http.Error(w, "IP address is required", http.StatusBadRequest)
@@ -22,7 +22,7 @@ func SnmpHandler(w http.ResponseWriter, r *http.Request) {
 	}
 
 	if versionStr == "" {
-		versionStr = "2" // Default to SNMPv2c (integer version)
+		versionStr = "2"
 	}
 
 	var version gosnmp.SnmpVersion
@@ -45,9 +45,16 @@ func SnmpHandler(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
+	jsonData, err := json.Marshal(data)
+	if err != nil {
+		log.Printf("Error marshaling JSON: %v", err)
+		http.Error(w, "Failed to process logs", http.StatusInternalServerError)
+		return
+	}
+
 	w.Header().Set("Content-Type", "application/json")
 	w.WriteHeader(http.StatusOK)
-	w.Write([]byte(data))
+	w.Write(jsonData)
 }
 
 func NetworkInfoHandler(w http.ResponseWriter, r *http.Request) {
