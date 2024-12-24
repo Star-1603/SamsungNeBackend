@@ -1,0 +1,5 @@
+torch
+sentence-transformers
+langchain_huggingface
+flask
+pandas

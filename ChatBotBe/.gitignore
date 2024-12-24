@@ -1,0 +1,69 @@
+# Python bytecode
+__pycache__/
+*.py[cod]
+
+# Virtual environment
+venv/
+env/
+ENV/
+.venv/
+myenv/  # Exclude myenv virtual environment
+.env/
+myenv/
+
+# Flask instance folder
+instance/
+
+# Configuration files
+*.cfg
+*.ini
+*.log
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints
+
+# Pytest cache
+.cache/
+*.cover
+*.py,cover
+
+# Coverage reports
+htmlcov/
+coverage.xml
+*.cover
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Environment variables
+.env
+*.env
+
+# IDE and editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*.sublime-project
+*.sublime-workspace
+
+# MacOS specific files
+.DS_Store
+
+# Windows specific files
+Thumbs.db
+ehthumbs.db
