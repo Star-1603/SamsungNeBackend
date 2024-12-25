@@ -3,3 +3,4 @@ sentence-transformers
 langchain_huggingface
 flask
 pandas
+flask_cors
