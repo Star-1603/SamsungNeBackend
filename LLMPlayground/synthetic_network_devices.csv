@@ -1,0 +1,101 @@
+Device Name,Device Type,Vendor,Model Number,Serial Number,Operating System Version,MAC Address,Location,CPU Usage (%),Storage Usage (GB),Heat (C),IP Address
+Firewall-01,Firewall,Cisco,XR1000,11223GHI,v8.5.6,90:1f:b8:7a:92:be,"Data Center C, Rack 8",40,80,60,116.0.1.3
+Router-01,Router,Juniper,XR1000,12345ABC,v12.1.3,e6:99:c9:98:9d:fb,"Data Center A, Rack 12",30,250,60,10.135.1.1
+Switch-01,Switch,Juniper,EX4200,67890DEF,v12.1.3,60:45:27:7d:84:18,"Data Center A, Rack 12",30,80,48,91.0.1.3
+Router-01,Switch,Cisco,EX4200,12345ABC,v12.1.3,04:a4:e8:25:ef:71,"Data Center C, Rack 8",32,80,55,10.0.1.1
+Router-01,Firewall,Juniper,PA-850,67890DEF,v12.1.3,da:72:6f:43:36:86,"Data Center A, Rack 12",30,182,46,192.151.1.2
+Firewall-01,Switch,Juniper,XR1000,11223GHI,v8.5.6,90:09:71:94:67:3a,"Data Center C, Rack 8",35,153,45,139.0.1.3
+Firewall-01,Router,Cisco,EX4200,67890DEF,v8.5.6,7a:b4:c4:e3:83:2a,"Data Center C, Rack 8",40,250,45,100.45.1.3
+Router-01,Switch,Cisco,PA-850,67890DEF,v14.2.1,24:55:ca:da:82:42,"Data Center B, Rack 5",30,80,45,10.0.1.3
+Switch-01,Switch,Juniper,EX4200,11223GHI,v8.5.6,de:6c:d4:57:df:d4,"Data Center B, Rack 5",33,80,53,153.0.1.2
+Router-01,Router,Palo Alto,PA-850,12345ABC,v12.1.3,14:e2:35:04:37:7d,"Data Center A, Rack 12",37,80,60,10.67.1.2
+Firewall-01,Router,Palo Alto,XR1000,67890DEF,v8.5.6,10:2a:18:8e:f8:d3,"Data Center C, Rack 8",40,80,59,192.0.1.3
+Router-01,Firewall,Cisco,EX4200,11223GHI,v12.1.3,42:85:72:53:cd:08,"Data Center A, Rack 12",35,250,60,10.51.1.1
+Switch-01,Firewall,Palo Alto,EX4200,12345ABC,v12.1.3,ec:49:9f:aa:87:92,"Data Center B, Rack 5",30,80,45,10.0.1.3
+Router-01,Firewall,Cisco,PA-850,12345ABC,v14.2.1,b6:c7:cf:86:63:f6,"Data Center A, Rack 12",30,80,47,192.153.1.3
+Switch-01,Router,Juniper,EX4200,67890DEF,v12.1.3,02:16:72:b8:db:1e,"Data Center C, Rack 8",40,80,57,10.0.1.3
+Router-01,Router,Juniper,PA-850,11223GHI,v12.1.3,b8:c4:d8:8c:84:22,"Data Center A, Rack 12",40,99,52,167.0.1.1
+Firewall-01,Firewall,Palo Alto,XR1000,12345ABC,v12.1.3,7c:16:70:19:cb:5d,"Data Center C, Rack 8",30,185,58,176.0.1.3
+Firewall-01,Router,Juniper,EX4200,67890DEF,v8.5.6,30:7f:41:4c:31:e4,"Data Center A, Rack 12",33,163,45,192.0.1.1
+Switch-01,Router,Palo Alto,EX4200,12345ABC,v12.1.3,fc:8d:30:1a:34:83,"Data Center C, Rack 8",30,80,53,88.142.1.2
+Router-01,Router,Juniper,XR1000,12345ABC,v12.1.3,cc:7e:d3:1a:c6:d0,"Data Center B, Rack 5",30,140,60,10.112.1.2
+Switch-01,Firewall,Palo Alto,XR1000,11223GHI,v14.2.1,26:4f:85:59:bf:04,"Data Center B, Rack 5",40,80,53,89.55.1.3
+Router-01,Firewall,Cisco,EX4200,12345ABC,v8.5.6,4a:02:e3:8c:a8:2d,"Data Center C, Rack 8",37,248,54,49.0.1.3
+Switch-01,Router,Palo Alto,EX4200,67890DEF,v14.2.1,e4:3a:c3:3a:89:f9,"Data Center B, Rack 5",32,80,58,172.0.1.3
+Firewall-01,Router,Juniper,XR1000,12345ABC,v12.1.3,f6:a1:81:cf:d5:2f,"Data Center C, Rack 8",35,98,60,63.42.1.2
+Switch-01,Router,Cisco,EX4200,11223GHI,v12.1.3,ac:66:22:82:c3:af,"Data Center A, Rack 12",30,80,49,10.0.1.2
+Firewall-01,Firewall,Juniper,XR1000,11223GHI,v8.5.6,0e:a3:a2:c6:61:f1,"Data Center B, Rack 5",30,238,53,50.0.1.2
+Firewall-01,Switch,Cisco,XR1000,12345ABC,v14.2.1,b2:e0:37:b4:b5:de,"Data Center A, Rack 12",30,80,55,165.168.1.2
+Router-01,Firewall,Palo Alto,EX4200,67890DEF,v8.5.6,58:d2:b1:14:22:98,"Data Center C, Rack 8",30,236,60,42.168.1.2
+Router-01,Router,Palo Alto,XR1000,11223GHI,v14.2.1,6e:c8:0b:82:e2:5e,"Data Center B, Rack 5",40,165,53,10.81.1.3
+Router-01,Firewall,Juniper,EX4200,11223GHI,v14.2.1,04:a4:e2:7f:3a:70,"Data Center C, Rack 8",30,90,45,176.0.1.3
+Switch-01,Firewall,Palo Alto,PA-850,11223GHI,v12.1.3,92:26:78:a2:bf:b2,"Data Center A, Rack 12",30,80,59,192.47.1.3
+Switch-01,Router,Palo Alto,PA-850,11223GHI,v12.1.3,3a:ff:c1:eb:2d:2b,"Data Center C, Rack 8",36,218,55,10.0.1.1
+Firewall-01,Switch,Palo Alto,PA-850,11223GHI,v14.2.1,82:dd:cd:4b:57:60,"Data Center A, Rack 12",40,250,45,10.0.1.3
+Router-01,Router,Juniper,XR1000,67890DEF,v12.1.3,0c:57:37:ea:f2:7f,"Data Center B, Rack 5",30,80,60,156.0.1.3
+Router-01,Router,Cisco,EX4200,11223GHI,v12.1.3,d4:76:97:ae:10:00,"Data Center C, Rack 8",36,250,45,10.0.1.3
+Firewall-01,Router,Cisco,EX4200,11223GHI,v14.2.1,60:1b:c2:60:a8:ce,"Data Center C, Rack 8",40,80,60,78.0.1.3
+Router-01,Firewall,Cisco,XR1000,67890DEF,v12.1.3,e8:92:8e:f5:4d:d8,"Data Center B, Rack 5",33,80,57,69.76.1.2
+Switch-01,Firewall,Cisco,EX4200,11223GHI,v8.5.6,82:95:16:dd:2d:9e,"Data Center C, Rack 8",40,80,52,10.0.1.1
+Router-01,Router,Palo Alto,XR1000,67890DEF,v14.2.1,00:87:3f:af:9b:50,"Data Center C, Rack 8",30,250,59,10.78.1.3
+Switch-01,Router,Palo Alto,XR1000,11223GHI,v14.2.1,9c:07:d9:8b:5b:f6,"Data Center B, Rack 5",39,125,60,105.111.1.3
+Router-01,Router,Palo Alto,PA-850,67890DEF,v14.2.1,d2:57:85:9f:4f:c1,"Data Center A, Rack 12",30,239,45,192.0.1.3
+Router-01,Firewall,Cisco,PA-850,11223GHI,v12.1.3,3c:9c:cb:12:af:29,"Data Center A, Rack 12",31,152,60,10.121.1.1
+Switch-01,Switch,Palo Alto,XR1000,12345ABC,v14.2.1,d8:ea:88:fa:f9:e3,"Data Center C, Rack 8",32,94,60,122.0.1.1
+Switch-01,Firewall,Palo Alto,XR1000,67890DEF,v12.1.3,dc:6d:5d:9d:f2:12,"Data Center B, Rack 5",38,110,54,10.0.1.3
+Switch-01,Router,Juniper,PA-850,12345ABC,v8.5.6,d2:1d:e9:7b:23:d4,"Data Center B, Rack 5",30,104,45,192.143.1.3
+Router-01,Router,Cisco,XR1000,11223GHI,v12.1.3,a2:b0:6b:db:e4:d9,"Data Center B, Rack 5",30,250,60,10.35.1.3
+Router-01,Switch,Palo Alto,PA-850,11223GHI,v14.2.1,54:55:aa:f1:46:82,"Data Center B, Rack 5",30,80,55,71.0.1.3
+Switch-01,Switch,Cisco,EX4200,11223GHI,v8.5.6,5a:b0:6b:50:ac:6c,"Data Center C, Rack 8",30,80,60,10.0.1.3
+Firewall-01,Router,Juniper,PA-850,11223GHI,v12.1.3,36:3f:d4:97:35:a1,"Data Center B, Rack 5",34,80,60,61.30.1.2
+Router-01,Router,Palo Alto,PA-850,12345ABC,v12.1.3,6c:0b:f2:e3:d1:43,"Data Center A, Rack 12",30,151,49,10.23.1.3
+Router-01,Router,Cisco,EX4200,12345ABC,v12.1.3,4c:56:a2:0f:4e:5c,"Data Center A, Rack 12",30,215,45,10.0.1.1
+Switch-01,Router,Palo Alto,PA-850,67890DEF,v14.2.1,7e:63:5c:76:46:83,"Data Center B, Rack 5",30,250,45,126.0.1.3
+Switch-01,Switch,Palo Alto,XR1000,67890DEF,v12.1.3,a4:43:45:3e:18:53,"Data Center C, Rack 8",40,250,54,112.0.1.3
+Firewall-01,Firewall,Palo Alto,PA-850,12345ABC,v14.2.1,50:b8:c7:04:30:33,"Data Center A, Rack 12",40,91,60,10.6.1.3
+Switch-01,Switch,Cisco,XR1000,12345ABC,v14.2.1,fc:b1:76:99:30:32,"Data Center C, Rack 8",34,80,51,192.15.1.3
+Router-01,Router,Palo Alto,XR1000,11223GHI,v8.5.6,98:e5:4c:c9:2c:5c,"Data Center B, Rack 5",40,80,45,192.4.1.3
+Firewall-01,Router,Palo Alto,PA-850,11223GHI,v14.2.1,b8:2d:7d:61:2a:ff,"Data Center C, Rack 8",40,250,45,192.0.1.3
+Router-01,Router,Palo Alto,PA-850,67890DEF,v8.5.6,6e:45:14:0f:22:8c,"Data Center C, Rack 8",30,143,48,62.98.1.3
+Switch-01,Firewall,Palo Alto,XR1000,12345ABC,v14.2.1,a0:14:b0:21:6a:49,"Data Center B, Rack 5",40,250,60,104.0.1.1
+Router-01,Router,Juniper,PA-850,11223GHI,v14.2.1,28:0a:9f:26:8e:ad,"Data Center C, Rack 8",30,80,47,89.93.1.2
+Switch-01,Router,Cisco,XR1000,11223GHI,v14.2.1,f6:6c:f8:a3:12:9b,"Data Center C, Rack 8",40,80,51,192.0.1.3
+Firewall-01,Router,Palo Alto,EX4200,67890DEF,v8.5.6,f6:1f:70:f6:4d:7d,"Data Center C, Rack 8",32,147,49,10.0.1.2
+Router-01,Router,Cisco,EX4200,11223GHI,v14.2.1,00:e9:69:fe:90:d2,"Data Center B, Rack 5",30,250,49,50.168.1.3
+Router-01,Router,Juniper,XR1000,11223GHI,v12.1.3,f4:49:bf:aa:b3:20,"Data Center C, Rack 8",30,80,52,127.0.1.3
+Router-01,Firewall,Cisco,EX4200,67890DEF,v12.1.3,34:76:8b:39:60:a4,"Data Center C, Rack 8",38,80,60,10.0.1.1
+Router-01,Router,Cisco,XR1000,67890DEF,v12.1.3,18:c5:db:1f:ec:94,"Data Center C, Rack 8",30,90,46,169.0.1.3
+Firewall-01,Firewall,Palo Alto,PA-850,67890DEF,v8.5.6,be:41:21:8c:77:ec,"Data Center B, Rack 5",33,144,45,10.18.1.2
+Router-01,Firewall,Palo Alto,XR1000,12345ABC,v12.1.3,9a:42:3e:45:70:4f,"Data Center C, Rack 8",30,80,45,100.13.1.3
+Firewall-01,Switch,Juniper,EX4200,67890DEF,v12.1.3,da:24:16:33:8b:e9,"Data Center C, Rack 8",39,197,60,11.168.1.3
+Router-01,Firewall,Juniper,PA-850,67890DEF,v8.5.6,92:0a:64:97:64:47,"Data Center C, Rack 8",35,80,47,62.20.1.2
+Switch-01,Firewall,Cisco,XR1000,12345ABC,v12.1.3,72:01:aa:6e:ff:d7,"Data Center A, Rack 12",30,196,60,10.168.1.1
+Switch-01,Firewall,Palo Alto,PA-850,67890DEF,v8.5.6,7e:ce:e2:1e:e8:0f,"Data Center A, Rack 12",30,80,45,65.0.1.3
+Router-01,Switch,Palo Alto,PA-850,12345ABC,v8.5.6,74:cf:df:f6:f3:9d,"Data Center C, Rack 8",33,80,59,54.79.1.1
+Router-01,Firewall,Juniper,XR1000,12345ABC,v8.5.6,a2:2b:af:3a:79:ab,"Data Center A, Rack 12",30,250,46,127.0.1.1
+Switch-01,Firewall,Cisco,EX4200,67890DEF,v8.5.6,00:0f:d6:f7:3d:10,"Data Center C, Rack 8",40,187,48,192.4.1.2
+Router-01,Firewall,Palo Alto,XR1000,11223GHI,v8.5.6,30:7e:f2:8f:c2:26,"Data Center C, Rack 8",30,80,45,175.0.1.2
+Firewall-01,Switch,Juniper,EX4200,67890DEF,v14.2.1,8c:74:7f:2b:53:3d,"Data Center A, Rack 12",30,209,45,10.0.1.1
+Switch-01,Router,Cisco,EX4200,12345ABC,v12.1.3,ae:b9:34:97:5d:ec,"Data Center B, Rack 5",30,80,60,34.64.1.1
+Switch-01,Switch,Palo Alto,PA-850,12345ABC,v14.2.1,12:1c:52:19:8c:ec,"Data Center A, Rack 12",34,80,45,120.168.1.2
+Router-01,Firewall,Palo Alto,EX4200,11223GHI,v8.5.6,62:34:92:46:ef:b2,"Data Center A, Rack 12",40,80,45,192.84.1.3
+Firewall-01,Firewall,Cisco,EX4200,11223GHI,v14.2.1,a6:97:89:8a:bb:bf,"Data Center B, Rack 5",30,250,47,47.34.1.3
+Firewall-01,Router,Cisco,PA-850,12345ABC,v8.5.6,86:dd:4f:7b:87:f7,"Data Center C, Rack 8",30,140,45,192.0.1.3
+Firewall-01,Switch,Juniper,EX4200,11223GHI,v12.1.3,98:07:4b:19:fd:78,"Data Center B, Rack 5",34,80,45,130.0.1.3
+Switch-01,Router,Cisco,XR1000,67890DEF,v14.2.1,ac:23:91:11:19:9a,"Data Center B, Rack 5",30,169,60,10.0.1.1
+Router-01,Firewall,Cisco,PA-850,12345ABC,v8.5.6,20:f8:8b:27:23:84,"Data Center A, Rack 12",30,80,60,161.95.1.3
+Router-01,Switch,Cisco,PA-850,67890DEF,v14.2.1,02:39:87:f0:82:93,"Data Center B, Rack 5",30,80,58,46.77.1.3
+Switch-01,Firewall,Cisco,EX4200,67890DEF,v12.1.3,02:d8:85:ce:c6:79,"Data Center C, Rack 8",35,250,48,10.0.1.1
+Firewall-01,Switch,Palo Alto,EX4200,11223GHI,v8.5.6,40:5d:fa:6e:30:41,"Data Center C, Rack 8",30,246,60,118.25.1.3
+Router-01,Firewall,Palo Alto,PA-850,11223GHI,v8.5.6,80:3e:2a:00:d7:37,"Data Center C, Rack 8",30,80,49,24.95.1.2
+Router-01,Firewall,Juniper,XR1000,11223GHI,v14.2.1,ec:80:4d:e3:aa:7f,"Data Center B, Rack 5",34,250,45,186.0.1.1
+Firewall-01,Firewall,Cisco,XR1000,12345ABC,v14.2.1,be:0e:f5:50:54:0d,"Data Center A, Rack 12",31,199,55,192.91.1.3
+Firewall-01,Switch,Cisco,PA-850,12345ABC,v12.1.3,48:43:33:ee:31:eb,"Data Center B, Rack 5",38,114,45,122.168.1.3
+Firewall-01,Switch,Palo Alto,EX4200,67890DEF,v8.5.6,b4:30:82:b6:ef:33,"Data Center A, Rack 12",30,182,55,192.0.1.3
+Switch-01,Router,Cisco,PA-850,11223GHI,v12.1.3,26:61:3b:69:0b:e3,"Data Center A, Rack 12",31,250,56,10.0.1.3
+Switch-01,Router,Juniper,XR1000,12345ABC,v8.5.6,e8:97:27:8d:66:43,"Data Center C, Rack 8",31,250,60,30.81.1.1
+Firewall-01,Firewall,Juniper,XR1000,12345ABC,v12.1.3,68:99:03:f3:bd:00,"Data Center A, Rack 12",30,186,46,10.0.1.2
+Switch-01,Firewall,Juniper,EX4200,67890DEF,v14.2.1,ac:07:48:46:86:05,"Data Center B, Rack 5",35,222,45,10.0.1.3
+Router-01,Firewall,Juniper,XR1000,67890DEF,v14.2.1,e0:db:1f:4d:d7:90,"Data Center A, Rack 12",30,152,52,163.0.1.3
+Router-01,Firewall,Cisco,EX4200,12345ABC,v12.1.3,c8:fc:83:cc:c9:e0,"Data Center C, Rack 8",35,80,45,192.0.1.3
+Router-01,Firewall,Cisco,XR1000,12345ABC,v12.1.3,62:55:c0:04:ea:bd,"Data Center B, Rack 5",36,80,60,76.28.1.1
