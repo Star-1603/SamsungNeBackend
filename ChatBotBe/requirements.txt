@@ -4,3 +4,5 @@ langchain_huggingface
 flask
 pandas
 flask_cors
+pymilvus
+langchain_community
