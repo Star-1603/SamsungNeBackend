@@ -4,6 +4,7 @@ from services.cli import analyze_dataset, initialise_with_dataser
 from services.rag.embeding import generate_embeddings
 from db.vector import connect_milvus
 from models.schemas.embedingSchema import create_milvus_collection
+from models.client import get_milvus_client
 import os
 
 main = Blueprint('main', __name__)
@@ -38,7 +39,7 @@ def analyze():
         return jsonify({"error": str(e)}), 500
 
 @main.route('/upload', methods=['POST'])
-def analyze():
+def upload():
     if 'file' not in request.files:
         return jsonify({"error": "No file provided"}), 400
 
@@ -64,14 +65,28 @@ def analyze():
 
         # Extract text content for embedding
         documents = [doc.page_content for doc in data]
+        print("Number of documents:", len(documents))
 
-        # Generate embeddings
-        embeddings = generate_embeddings(documents, max_threads=8, chunk_size=200)
+        if documents:
+            embeddings = generate_embeddings(documents, max_threads=8, chunk_size=200)
+            print("Embeddings shape:", embeddings.shape)
 
-        # Insert embeddings into Milvus collection
-        ids = [i for i in range(len(embeddings))]
-        collection.insert([ids, embeddings])  # Insert data into the collection
-        collection.flush()  # Ensure data is committed to Milvus
+            if len(embeddings) > 0 and len(embeddings[0]) != 384:
+                raise ValueError("Embedding dimensions do not match the defined schema (384).")
+
+            client = get_milvus_client() 
+        else:
+            print("No documents found for embedding generation.")
+
+        for embedding in embeddings:
+            print(embedding)
+            data = {
+                "embedding": embedding
+            }
+            client.insert(collection_name="log_search_collection", data=[data])
+        client.flush(collection_name="log_search_collection")
+
+        print(f"Number of entities in collection: {collection.num_entities}")
 
         return jsonify({"response": "Embeddings uploaded successfully", "file_path": file_path}), 200
     except Exception as e:

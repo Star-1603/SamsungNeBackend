@@ -26,10 +26,19 @@ def generate_embeddings(texts, model_name='all-MiniLM-L6-v2', max_threads=4, chu
     chunks = [texts[i:i + chunk_size] for i in range(0, len(texts), chunk_size)]
 
     # Use ThreadPoolExecutor for multithreading
-    embeddings = []
+    all_embeddings = []
     with ThreadPoolExecutor(max_threads) as executor:
         futures = [executor.submit(encode_chunk, chunk) for chunk in chunks]
         for future in futures:
-            embeddings.extend(future.result())
+            # Append each chunk of embeddings (as a NumPy array)
+            all_embeddings.append(future.result())
 
-    return np.array(embeddings)
+    # Concatenate all embeddings into a single NumPy array
+    embeddings = np.vstack(all_embeddings)
+
+    # Debugging information
+    print("Embeddings Shape:", embeddings.shape)
+    print("Embeddings Type:", type(embeddings))
+    print("Embeddings Data Type:", embeddings.dtype)
+
+    return embeddings

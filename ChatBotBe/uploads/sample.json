@@ -1,0 +1,82 @@
+[
+    {
+        "instruction": "Summarize the configuration log.",
+        "input": "Timestamp: 2015-07-29 17:41:41,536\nLog Level: INFO\nMessage: Reading configuration from: /etc/zookeeper/conf/zoo.cfg",
+        "output": "Configuration update: Reading configuration from: /etc/zookeeper/conf/zoo.cfg."
+    },
+    {
+        "instruction": "Summarize the configuration log.",
+        "input": "Timestamp: 2015-07-29 17:41:41,544\nLog Level: INFO\nMessage: Defaulting to majority quorums",
+        "output": "Configuration update: Defaulting to majority quorums."
+    },
+    {
+        "instruction": "Summarize the configuration log.",
+        "input": "Timestamp: 2015-07-29 17:41:41,555\nLog Level: INFO\nMessage: autopurge.snapRetainCount set to 3",
+        "output": "Configuration update: autopurge.snapRetainCount set to 3."
+    },
+    {
+        "instruction": "Summarize the configuration log.",
+        "input": "Timestamp: 2015-07-29 17:41:41,555\nLog Level: INFO\nMessage: autopurge.purgeInterval set to 0",
+        "output": "Configuration update: autopurge.purgeInterval set to 0."
+    },
+    {
+        "instruction": "Summarize the configuration log.",
+        "input": "Timestamp: 2015-07-29 17:41:41,557\nLog Level: INFO\nMessage: Purge task is not scheduled.",
+        "output": "Configuration update: Purge task is not scheduled.."
+    },
+    {
+        "instruction": "Summarize the configuration log.",
+        "input": "Timestamp: 2015-07-29 17:41:41,579\nLog Level: INFO\nMessage: Starting quorum peer",
+        "output": "Configuration update: Starting quorum peer."
+    },
+    {
+        "instruction": "Summarize the configuration log.",
+        "input": "Timestamp: 2015-07-29 17:41:41,609\nLog Level: INFO\nMessage: binding to port 0.0.0.0/0.0.0.0:2181",
+        "output": "Configuration update: binding to port 0.0.0.0/0.0.0.0:2181."
+    },
+    {
+        "instruction": "Summarize the configuration log.",
+        "input": "Timestamp: 2015-07-29 17:41:41,648\nLog Level: INFO\nMessage: tickTime set to 2000",
+        "output": "Configuration update: tickTime set to 2000."
+    },
+    {
+        "instruction": "Summarize the configuration log.",
+        "input": "Timestamp: 2015-07-29 17:41:41,649\nLog Level: INFO\nMessage: minSessionTimeout set to -1",
+        "output": "Configuration update: minSessionTimeout set to -1."
+    },
+    {
+        "instruction": "Summarize the configuration log.",
+        "input": "Timestamp: 2015-07-29 17:41:41,649\nLog Level: INFO\nMessage: maxSessionTimeout set to -1",
+        "output": "Configuration update: maxSessionTimeout set to -1."
+    },
+    {
+        "instruction": "Summarize the configuration log.",
+        "input": "Timestamp: 2015-07-29 17:41:41,649\nLog Level: INFO\nMessage: initLimit set to 10",
+        "output": "Configuration update: initLimit set to 10."
+    },
+    {
+        "instruction": "Summarize the configuration log.",
+        "input": "Timestamp: 2015-07-29 17:41:41,680\nLog Level: INFO\nMessage: currentEpoch not found! Creating with a reasonable default of 0. This should only happen when you are upgrading your installation",
+        "output": "Configuration update: currentEpoch not found! Creating with a reasonable default of 0. This should only happen when you are upgrading your installation."
+    },
+    {
+        "instruction": "Summarize the configuration log.",
+        "input": "Timestamp: 2015-07-29 17:41:41,683\nLog Level: INFO\nMessage: acceptedEpoch not found! Creating with a reasonable default of 0. This should only happen when you are upgrading your installation",
+        "output": "Configuration update: acceptedEpoch not found! Creating with a reasonable default of 0. This should only happen when you are upgrading your installation."
+    },
+    {
+        "instruction": "Summarize the configuration log.",
+        "input": "Timestamp: 2015-07-29 17:41:41,692\nLog Level: INFO\nMessage: My election bind port: 0.0.0.0/0.0.0.0:3888",
+        "output": "Configuration update: My election bind port: 0.0.0.0/0.0.0.0:3888."
+    },
+    {
+        "instruction": "Summarize the configuration log.",
+        "input": "Timestamp: 2015-07-29 17:41:41,714\nLog Level: INFO\nMessage: LOOKING",
+        "output": "Configuration update: LOOKING."
+    },
+    {
+        "instruction": "Summarize the configuration log.",
+        "input": "Timestamp: 2015-07-29 17:41:41,719\nLog Level: INFO\nMessage: New election. My id =  1, proposed zxid=0x0",
+        "output": "Configuration update: New election. My id =  1, proposed zxid=0x0."
+    }
+]
