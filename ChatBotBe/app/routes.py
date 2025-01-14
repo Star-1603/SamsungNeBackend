@@ -1,10 +1,13 @@
+import json
 from flask import Blueprint, jsonify, request
 from langchain_community.document_loaders import JSONLoader
-from services.cli import analyze_dataset, initialise_with_dataser
+from services.LLM.mistral import analyze_dataset
 from services.rag.embeding import generate_embeddings
 from db.vector import connect_milvus
 from models.schemas.embedingSchema import create_milvus_collection
-from models.client import get_milvus_client
+from db.client import get_milvus_client
+from models.schemas.embedingSchema import insert_data
+from services.searching.similaritySerching import similarity_search
 import os
 
 main = Blueprint('main', __name__)
@@ -13,15 +16,14 @@ main = Blueprint('main', __name__)
 connect_milvus(host="127.0.0.1", port="19530")
 
 # Create or load the collection
-collection_name = "log_search_collection"
+collection_name = "log_search_collection2"
 dim = 384  # Update based on your embedding dimensions
 collection = create_milvus_collection(collection_name, dim)
 
 @main.route('/')
 def home():
     try:
-        response = initialise_with_dataser()
-        return jsonify({"response": response}), 200
+        return "<p>hi</p>", 200
     except Exception as e:
         return jsonify({"error": str(e)}), 500
 
@@ -33,7 +35,10 @@ def analyze():
         return jsonify({"error": "No query provided"}), 400
 
     try:
-        response = analyze_dataset(user_query)
+        data = similarity_search(query_text=user_query)
+        str = f"users Quary: {user_query}, data from db: {data}"
+        response = analyze_dataset(str)
+
         return jsonify({"response": response}), 200
     except Exception as e:
         return jsonify({"error": str(e)}), 500
@@ -63,6 +68,8 @@ def upload():
         )
         data = loader.load()
 
+        print(f"First document: {data[0]}")
+
         # Extract text content for embedding
         documents = [doc.page_content for doc in data]
         print("Number of documents:", len(documents))
@@ -78,15 +85,17 @@ def upload():
         else:
             print("No documents found for embedding generation.")
 
-        for embedding in embeddings:
-            print(embedding)
-            data = {
-                "embedding": embedding
+        for doc, embedding in zip(data, embeddings):
+            page_content = json.loads(doc.page_content)  # Parse the JSON string
+            metadata = {
+                "instruction": page_content.get("instruction"),
+                "input": page_content.get("input"),
+                "output": page_content.get("output")
             }
-            client.insert(collection_name="log_search_collection", data=[data])
-        client.flush(collection_name="log_search_collection")
+            insert_data(embedding, metadata)
 
-        print(f"Number of entities in collection: {collection.num_entities}")
+        # Flush the data to the collection
+        client.flush(collection_name="log_search_collection2")
 
         return jsonify({"response": "Embeddings uploaded successfully", "file_path": file_path}), 200
     except Exception as e:

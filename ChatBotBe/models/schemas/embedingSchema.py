@@ -1,11 +1,12 @@
 from pymilvus import connections, FieldSchema, CollectionSchema, DataType, Collection
 from pymilvus.exceptions import MilvusException
-from models.client import get_milvus_client
+import json
+from db.client import get_milvus_client
 
 client = get_milvus_client()
 
 def list_milvus_collections():
-    """ List all collections in Milvus """
+    """List all collections in Milvus."""
     try:
         collections = client.list_collections()
         print("Collections:", collections)
@@ -14,24 +15,56 @@ def list_milvus_collections():
         print(f"Error listing collections: {e}")
         return []
 
-def create_milvus_collection(collection_name="log_search_collection", dim=384):
-    # Check if collection exists
-    existing_collections = list_milvus_collections()
-
-    if collection_name in existing_collections:
-        print(f"Collection {collection_name} already exists.")
-        return collection_name
-    else:
-        # Define schema for the collection
+def create_milvus_collection(collection_name="log_search_collection2", dim=384):
+    """Create a new collection in Milvus with metadata support."""
+    try:
+        # Check if the collection already exists
+        existing_collections = list_milvus_collections()
+        if collection_name in existing_collections:
+            print(f"Collection '{collection_name}' already exists.")
+            return collection_name
+        
+        # Define the schema for the collection
         fields = [
             FieldSchema(name="id", dtype=DataType.INT64, is_primary=True, auto_id=True),
-            FieldSchema(name="embedding", dtype=DataType.FLOAT_VECTOR, dim=dim)
+            FieldSchema(name="embedding", dtype=DataType.FLOAT_VECTOR, dim=dim),
+            FieldSchema(name="meatadata", dtype=DataType.JSON),  # Storing metadata as JSON string
         ]
-        schema = CollectionSchema(fields, description="Description of your collection")
+        
+        schema = CollectionSchema(fields, description="Collection with embeddings and metadata")
 
         # Create the collection
         client.create_collection(collection_name=collection_name, schema=schema)
         print(f"Created collection: {collection_name}")
         return collection_name
 
+    except MilvusException as e:
+        print(f"Error creating collection: {e}")
+        return None
 
+import json
+
+import json
+
+def insert_data(embeddings, metadata_list):
+    """Insert data into Milvus collection with embeddings and metadata."""
+    try:
+
+        data = {
+            "embedding": embeddings,
+            "meatadata": metadata_list
+        }
+        collection_name = "log_search_collection2"  # Ensure this is the correct collection name
+
+        # Inserting data into the collection
+        client.insert(collection_name=collection_name, data=[data])
+
+    except MilvusException as e:
+        print(f"Error inserting data: {e}")
+        return None
+    except ValueError as ve:
+        print(f"Error: {ve}")
+        return None
+    except Exception as ex:
+        print(f"Unexpected error: {ex}")
+        return None
