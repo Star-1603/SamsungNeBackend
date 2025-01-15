@@ -1,4 +1,4 @@
-
+'use client';
 // Input.tsx
 import React, { useState } from 'react';
 
@@ -21,7 +21,7 @@ export const Input: React.FC<InputProps> = ({ onSubmit }) => {
   };
 
   return (
-    <div className='p-4 bg-black fixed bottom-0 h-24 left-0 right-0'>
+    <div className='p-4 bg-black fixed bottom-0 h-24 left-64 right-0'>
       <input
         type="text"
         value={inputValue}

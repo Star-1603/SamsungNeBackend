@@ -1,11 +1,15 @@
-import React from 'react';
+import React from "react";
 
 interface QuaryProps {
-  text: string; 
+  text: string;
 }
 
 export const Quary: React.FC<QuaryProps> = ({ text }) => {
   return (
-    <div className='bg-neutral-700 text-white p-4 rounded-3xl text-xl ml-20 mt-4'>{text}</div> 
+    <div className="h-fit">
+      <div className="bg-neutral-700 text-white py-4 px-4 min-h-12 rounded-xl text-xl w-5/6 mt-4 ml-auto h-fit">
+        {text}
+      </div>
+    </div>
   );
-}
+};
