@@ -1,7 +1,7 @@
 import json
 from flask import Blueprint, jsonify, request
 from langchain_community.document_loaders import JSONLoader
-from services.LLM.mistral import analyze_dataset
+from services.LLM.mistral import analyze_dataset, preprocess_query
 from services.rag.embeding import generate_embeddings
 from db.vector import connect_milvus
 from models.schemas.embedingSchema import create_milvus_collection
@@ -33,10 +33,13 @@ def analyze():
     
     if not user_query:
         return jsonify({"error": "No query provided"}), 400
+    
+    processed_query = preprocess_query(user_query)
+    print(f"Preprocessed Query: {processed_query}")
 
     try:
-        data = similarity_search(query_text=user_query)
-        str = f"users Quary: {user_query}, data from db: {data}"
+        data = similarity_search(query_text=processed_query)
+        str = f"users Quary: {user_query}, data of Network Elements from db: {data}"
         response = analyze_dataset(str)
 
         return jsonify({"response": response}), 200

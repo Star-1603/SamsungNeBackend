@@ -55,7 +55,7 @@ export const Flow: React.FC = () => {
   };
 
   return (
-    <div className='w-full p-8 pb-32'>
+    <div className='w-full p-8 mb-36'>
       <div className="conversation">
         {conversation.map((msg, index) =>
           msg.type === 'query' ? (

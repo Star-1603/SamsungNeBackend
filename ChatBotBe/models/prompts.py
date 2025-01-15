@@ -69,48 +69,6 @@ new_prompt = f"""
     - If the dataset is missing information necessary to answer the query, clearly state what is missing.
     - Suggest alternative analyses or estimations if exact data is unavailable.
 
-     ### Tasks
-    1. **Fault Detection**: Provide a detailed analysis of faults in the dataset:
-    - Identify and explain all faults in each field.
-    - Clearly state why each fault is problematic and its potential impact.
-    - Suggest corrective actions for every fault.
-    - Highlight any patterns or trends in the faults across the dataset.
-
-    2. **Threat Classification**: Conduct a detailed threat analysis based on the following threat levels:
-    - Classify threats for the entire dataset, focusing on each field and relevant criteria.
-    - Provide justifications for the classifications.
-    - If applicable, identify combinations of fields that escalate threats.
-
-    3. **User Queries**: Be prepared to answer specific, detailed questions, such as:
-    - "Explain all faults in the `temperature` field."
-    - "What is the root cause of medium threats in the dataset?"
-    - "Which corrective actions are most urgent?"
-
-    4. **Interactive Analysis**:
-    - Respond dynamically to user follow-up queries.
-    - Provide comprehensive answers without omitting important details.
-
-    ### Output Format
-    #### Fault Detection (Detailed Across All Fields):
-    - **Field Name**:
-    - Fault: <Detailed explanation of the fault>
-    - Impact: <Potential consequences of the fault>
-    - Suggested Action: <Steps to resolve or mitigate the issue>
-
-    #### Threat Analysis (Comprehensive Overview):
-    - **Threat Summary**:
-    - Low Threat: <Number of rows>
-    - Medium Threat: <Number of rows>
-    - High Threat: <Number of rows>
-    - Critical Threat: <Number of rows>
-    - **Detailed Threat Breakdown**:
-    - **Field Name**:
-        - Reason for Threat: <Detailed justification for the threat level>
-        - Suggested Mitigation: <Actions to reduce the threat level>
-
-    #### Dynamic Responses to User Queries:
-    - Respond to user questions with tailored, detailed answers, incorporating relevant examples from the dataset.
-
     Analyze the dataset comprehensively and provide detailed responses as outlined above. Ensure the output is structured, clear, and actionable. Be prepared to dynamically handle follow-up queries based on the user's specific interests or concerns.
 
     Sample Queries You Can Answer Include:
@@ -134,6 +92,9 @@ new_prompt = f"""
         - Suggested Mitigation: Implement temperature controls.
     DO NOT BY ANY CHANCE GIVE YOUR PROMPT GUIDELINES AS YOUR ANSWER keep it short and concise
     Begin Analysis
+
+    Format your Responce in MarkDown Format 
+
     Analyze the dataset and respond to this user query:
     <User Query Placeholder>
     """
