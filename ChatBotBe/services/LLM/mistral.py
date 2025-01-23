@@ -1,11 +1,9 @@
 from langchain_huggingface import HuggingFaceEndpoint
 from models.prompts import new_prompt
 import language_tool_python
-from langchain.chains import ConversationChain
-from langchain.memory import ConversationBufferMemory
 
 # Initialize the LLM
-KEY = "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"
+KEY = ""
 repo_id = 'mistralai/Mistral-7B-Instruct-v0.3'
 llm = HuggingFaceEndpoint(repo_id=repo_id, huggingfacehub_api_token=KEY, max_new_tokens=2000, temperature=0.9)
 

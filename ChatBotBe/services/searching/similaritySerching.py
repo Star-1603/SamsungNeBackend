@@ -18,21 +18,19 @@ def similarity_search(collection_name="log_search_collection2", query_text="noth
     Returns:
         list: The search results.
     """
-    # Generate embedding for the query text
     query_embedding = generate_embeddings([query_text])[0].astype('float32')
 
-    # Search parameters for Milvus
     search_params = {
-        "metric_type": "COSINE",  # Change to "COSINE" if using cosine similarity
+        "metric_type": "COSINE",
         "params": {"ef": 64}  # `ef` is a hyperparameter for HNSW
     }
 
     # Perform Basic ANN search
     results = client.search(
         collection_name=collection_name,
-        data=[query_embedding],  # Wrap query embedding in a list
-        anns_field="embedding",  # The field name used for embeddings
-        search_params=search_params,  # Correct parameter name
+        data=[query_embedding],
+        anns_field="embedding", 
+        search_params=search_params,
         limit=top_k,
         output_fields=["meatadata"]
     )

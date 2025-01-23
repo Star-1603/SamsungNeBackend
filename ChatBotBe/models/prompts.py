@@ -1,12 +1,4 @@
 import json
-import pandas as pd
-
-file_path = r'C:\Users\dines\OneDrive\Documents\GitHub\SamsungNeBackend\ChatBotBe\models\data\synthetic_network_elements.csv'
-
-df = pd.read_csv(file_path)
-df.head()
-
-df_json = df.to_json(orient='records')
 
 threat_levels = {
     "Low": {

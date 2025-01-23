@@ -1,4 +1,4 @@
-from pymilvus import connections, FieldSchema, CollectionSchema, DataType, Collection
+from pymilvus import FieldSchema, CollectionSchema, DataType
 from pymilvus.exceptions import MilvusException
 import json
 from db.client import get_milvus_client
@@ -18,22 +18,19 @@ def list_milvus_collections():
 def create_milvus_collection(collection_name="log_search_collection2", dim=384):
     """Create a new collection in Milvus with metadata support."""
     try:
-        # Check if the collection already exists
         existing_collections = list_milvus_collections()
         if collection_name in existing_collections:
             print(f"Collection '{collection_name}' already exists.")
             return collection_name
         
-        # Define the schema for the collection
         fields = [
             FieldSchema(name="id", dtype=DataType.INT64, is_primary=True, auto_id=True),
             FieldSchema(name="embedding", dtype=DataType.FLOAT_VECTOR, dim=dim),
-            FieldSchema(name="meatadata", dtype=DataType.JSON),  # Storing metadata as JSON string
+            FieldSchema(name="meatadata", dtype=DataType.JSON), 
         ]
         
         schema = CollectionSchema(fields, description="Collection with embeddings and metadata")
 
-        # Create the collection
         client.create_collection(collection_name=collection_name, schema=schema)
         print(f"Created collection: {collection_name}")
         return collection_name
@@ -41,10 +38,6 @@ def create_milvus_collection(collection_name="log_search_collection2", dim=384):
     except MilvusException as e:
         print(f"Error creating collection: {e}")
         return None
-
-import json
-
-import json
 
 def insert_data(embeddings, metadata_list):
     """Insert data into Milvus collection with embeddings and metadata."""
@@ -54,9 +47,8 @@ def insert_data(embeddings, metadata_list):
             "embedding": embeddings,
             "meatadata": metadata_list
         }
-        collection_name = "log_search_collection2"  # Ensure this is the correct collection name
+        collection_name = "log_search_collection2"  
 
-        # Inserting data into the collection
         client.insert(collection_name=collection_name, data=[data])
 
     except MilvusException as e:

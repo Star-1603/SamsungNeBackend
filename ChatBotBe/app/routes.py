@@ -12,12 +12,9 @@ import os
 
 main = Blueprint('main', __name__)
 
-# Connect to Milvus
 connect_milvus(host="127.0.0.1", port="19530")
-
-# Create or load the collection
 collection_name = "log_search_collection2"
-dim = 384  # Update based on your embedding dimensions
+dim = 384
 collection = create_milvus_collection(collection_name, dim)
 
 @main.route('/')
@@ -73,7 +70,6 @@ def upload():
 
         print(f"First document: {data[0]}")
 
-        # Extract text content for embedding
         documents = [doc.page_content for doc in data]
         print("Number of documents:", len(documents))
 
@@ -89,7 +85,7 @@ def upload():
             print("No documents found for embedding generation.")
 
         for doc, embedding in zip(data, embeddings):
-            page_content = json.loads(doc.page_content)  # Parse the JSON string
+            page_content = json.loads(doc.page_content)
             metadata = {
                 "instruction": page_content.get("instruction"),
                 "input": page_content.get("input"),
@@ -97,7 +93,6 @@ def upload():
             }
             insert_data(embedding, metadata)
 
-        # Flush the data to the collection
         client.flush(collection_name="log_search_collection2")
 
         return jsonify({"response": "Embeddings uploaded successfully", "file_path": file_path}), 200
